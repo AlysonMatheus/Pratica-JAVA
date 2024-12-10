@@ -6,10 +6,11 @@ public class StringBuilderTest01 {
         nome.concat("Matheus");
         nome.substring(0,2);
         System.out.println(nome);
-        StringBuilder sb = new StringBuilder("Alyson");
+        StringBuffer sb = new StringBuffer("Alyson");
         sb.append(" Mathues").append(" Dev Java");
         sb.reverse();
         sb.reverse();
+        sb.delete(0,2);
         System.out.println(sb);
     }
 }
