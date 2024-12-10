@@ -10,12 +10,12 @@ public class StringPeromanceTest {
         inicio = System.currentTimeMillis();
         concatStringBuilder(100000);
         fim = System.currentTimeMillis();
-        System.out.println("Tempo gasto para String " + (fim - inicio) + "ms");
+        System.out.println("Tempo gasto para StringBuilder " + (fim - inicio) + "ms");
 
         inicio = System.currentTimeMillis();
         concatStringBuffer(100000);
         fim = System.currentTimeMillis();
-        System.out.println("Tempo gasto para String " + (fim - inicio) + "ms");
+        System.out.println("Tempo gasto para StringBuffer " + (fim - inicio) + "ms");
 
     }
 
