@@ -14,10 +14,13 @@ public class CalendarioTest01 {
         System.out.println(c.get(Calendar.DAY_OF_YEAR));
         System.out.println(c.get(Calendar.DAY_OF_WEEK_IN_MONTH));
 
+        c.add(Calendar.DAY_OF_MONTH,5);
 
         Date date = c.getTime();
-
-
+        System.out.println(date);
         System.out.println(c);
+
+
+
     }
 }
