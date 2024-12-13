@@ -1,4 +1,4 @@
-package javacore.Datas.test;
+package javacore.Formatacao.test;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -16,5 +16,7 @@ public class LocaleTest01 {
         System.out.println("Italia "+ df1.format(calender.getTime()));
         System.out.println("Suiça "+ df2.format(calender.getTime()));
         System.out.println("India "+ df3.format(calender.getTime()));
+
+        System.out.println(localeIndia.getDisplayCountry(localech));
     }
 }
