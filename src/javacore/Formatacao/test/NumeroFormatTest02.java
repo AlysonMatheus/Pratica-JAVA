@@ -1,6 +1,7 @@
 package javacore.Formatacao.test;
 
 import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.Locale;
 
 public class NumeroFormatTest02 {
@@ -18,8 +19,17 @@ public class NumeroFormatTest02 {
 
       double valor = 10_000.3130;
       for (NumberFormat numberFormat :nfa){
+     numberFormat.setMaximumFractionDigits(2);
           System.out.println(numberFormat.format(valor));
       }
+      String valorString = "10000.3130";
+      try{
+          System.out.println(nfa[0].parse(valorString));
+
+      }catch (ParseException e){
+          e.printStackTrace();
+      }
+
 
     }
 }
