@@ -19,12 +19,12 @@ public class NumeroFormatTest02 {
 
       double valor = 10_000.3130;
       for (NumberFormat numberFormat :nfa){
-     numberFormat.setMaximumFractionDigits(2);
+          System.out.println(numberFormat.getMaximumFractionDigits());
           System.out.println(numberFormat.format(valor));
       }
-      String valorString = "10000.3130";
+      String valorString = "￥10,000";
       try{
-          System.out.println(nfa[0].parse(valorString));
+          System.out.println(nfa[1].parse(valorString));
 
       }catch (ParseException e){
           e.printStackTrace();
