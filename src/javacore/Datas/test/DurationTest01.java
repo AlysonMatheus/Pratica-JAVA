@@ -1,9 +1,6 @@
 package javacore.Datas.test;
 
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 
 public class DurationTest01 {
     public static void main(String[] args) {
@@ -12,7 +9,14 @@ public class DurationTest01 {
         LocalTime timenow = LocalTime.now();
         LocalTime timeMinus7Hours = LocalTime.now().minusHours(7);
         Duration duration = Duration.between(now,nowAfterTwoYears);
+        Duration duration1 = Duration.between(timenow, timeMinus7Hours);
+        Duration duration2 = Duration.between(Instant.now(),Instant.now().plusSeconds(1000));
+         Duration duration3 = Duration.ofDays(20);
         System.out.println(duration);
+        System.out.println(duration1);
+        System.out.println(duration2);
+        System.out.println(duration3);
+
 
     }
 }
