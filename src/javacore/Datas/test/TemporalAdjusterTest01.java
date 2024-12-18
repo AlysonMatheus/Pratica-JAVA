@@ -32,5 +32,9 @@ LocalDate now = LocalDate.now();
         now = LocalDate.now().with(new ObterProximoDiaUtil());
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
+
+        now = LocalDate.now().withDayOfMonth(20).with(new ObterProximoDiaUtil());
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
     }
 }
