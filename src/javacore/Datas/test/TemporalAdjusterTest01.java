@@ -25,7 +25,7 @@ class ObterProximoDiaUtil implements TemporalAdjuster{
 
 public class TemporalAdjusterTest01 {
     public static void main(String[] args) {
-LocalDate now = LocalDate.now();
+        LocalDate now = LocalDate.now();
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
 
@@ -36,5 +36,6 @@ LocalDate now = LocalDate.now();
         now = LocalDate.now().withDayOfMonth(20).with(new ObterProximoDiaUtil());
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
+     
     }
 }
