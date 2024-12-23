@@ -1,6 +1,7 @@
 package javacore.Datas.test;
 
 import java.time.*;
+import java.time.chrono.JapaneseDate;
 import java.util.Map;
 
 public class ZoneTest01 {
@@ -35,6 +36,10 @@ public class ZoneTest01 {
        OffsetDateTime offsetDateTime2 = instant.atOffset(offsetManaus);
         System.out.println(offsetDateTime2);
 
+        JapaneseDate japaneseDate = JapaneseDate.from(LocalDate.now());
+        System.out.println(japaneseDate);
+          LocalDate date = LocalDate.of(1900,2,1);
+         JapaneseDate.from(date);
 
     }
 }
