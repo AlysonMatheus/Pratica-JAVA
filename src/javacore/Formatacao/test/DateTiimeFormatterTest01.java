@@ -32,7 +32,7 @@ public class DateTiimeFormatterTest01 {
 
         //dd/MM/yyyy -Brasil
         //MM/dd//yyyy -Japão
-        //yyyy/MM/dd -EstadosUnidos
+        //yyyy/MM/dd -Estados Unidos
         // Esses são o formatos da data em cada pais, sempre bom ficar ciente na hora de fazer o projeto
 
         DateTimeFormatter formatterBR = DateTimeFormatter.ofPattern("dd/MM/yyyy");
