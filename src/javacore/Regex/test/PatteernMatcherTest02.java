@@ -10,7 +10,7 @@ public class PatteernMatcherTest02 {
         //\s - Espaçoes em branco \t \n \f \f \r
         // \S = Todos os caracters excluindo os brancos
         // \W = a-ZA-Z, digitos, _
-        // \W =Tudo que não for incclluso no \w
+        // \W =Tudo que não for incclluso no \
         String regex = "\\d";
         String regex1 ="\\D";
         String regex2 ="\\s";
