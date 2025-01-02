@@ -3,21 +3,21 @@ package javacore.Regex.test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PatteernMatcherTest02 {
+public class PatteernMatcherTest03 {
     public static void main(String[] args) {
         // \d = Todos os digitos
         // /D = Tudo o que não for digito
         //\s - Espaçoes em branco \t \n \f \f \r
         // \S = Todos os caracters excluindo os brancos
-        // \W = a-ZA-Z, digitos,
+        // \W = a-ZA-Z, digitos, _
         // \W =Tudo que não for incclluso no \
-        String regex = "\\d";
+        String regex = "0[xX][0-9a-fA-F]";
         String regex1 ="\\D";
         String regex2 ="\\s";
         String regex3 ="\\S";
 
         //String texto =  "abaaba";
-        String texto2 =  "@aaa212&  #1910";
+        String texto2 =  "12 0x 0X 0xFFABC 0x109 0x1";
         Pattern pattern = Pattern.compile(regex);
         Pattern pattern1 = Pattern.compile(regex1);
         Pattern pattern2 = Pattern.compile(regex2);
@@ -45,7 +45,8 @@ public class PatteernMatcherTest02 {
             System.out.println(matcher2.start()+" "+matcher2.group()+"\n");
         }
 
-
+        int numeroHex = 0X59F86A; //Numero Hexadecimal sempre vai ter o começo 'OX'
+        System.out.println(numeroHex);
 
 
 
