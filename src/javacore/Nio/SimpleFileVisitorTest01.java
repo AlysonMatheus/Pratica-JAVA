@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
 
-class ListAllFiles extends SimpleFileVisitor<Path>{
+class ListAllJavaFiles extends SimpleFileVisitor<Path>{
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) {
@@ -18,7 +18,7 @@ class ListAllFiles extends SimpleFileVisitor<Path>{
 public class SimpleFileVisitorTest01 {
     public static void main(String[] args) throws IOException {
         Path root = Paths.get(".");
-        Files.walkFileTree(root,new ListAllFiles());
+        Files.walkFileTree(root,new ListAllJavaFiles());
 
     }
 }
