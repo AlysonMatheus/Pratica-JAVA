@@ -1,6 +1,7 @@
 package javacore.Serializacao.test;
 
 import javacore.Serializacao.dominio.Aluno;
+import javacore.Serializacao.dominio.Turma;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -12,8 +13,10 @@ import java.nio.file.Paths;
 
 public class SerializacaoTest01 {
     public static void main(String[] args) {
-        Aluno aluno = new Aluno(1L, "Alysn", "1234");
-      //  serializar(aluno);
+        Aluno aluno = new Aluno(1L, "Alyson", "1234");
+         Turma turma = new Turma("Maratona do Alyson no Java");
+         aluno.setTurma(turma);
+        serializar(aluno);
         deserializar();
     }
 
