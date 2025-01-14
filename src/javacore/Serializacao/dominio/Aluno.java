@@ -1,11 +1,14 @@
 package javacore.Serializacao.dominio;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 public class Aluno implements Serializable {
-   private Long id;
+@Serial
+
+private Long id;
    private String nome;
-   private String passoword;
+   private transient String passoword;
 
     public Aluno(Long id, String nome, String passoword) {
         this.id = id;
