@@ -1,6 +1,8 @@
 package javacore.Serializacao.dominio;
 
-public class Aluno {
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
    private Long id;
    private String nome;
    private String passoword;
@@ -9,6 +11,7 @@ public class Aluno {
         this.id = id;
         this.nome = nome;
         this.passoword = passoword;
+        System.out.println("Dentro do Construtor");
     }
 
     @Override
