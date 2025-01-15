@@ -30,7 +30,7 @@ public class Aluno implements Serializable {
 
         }
     }
-@Serial
+
     private void readObect(ObjectInputStream ois) {
         try {
             ois.defaultReadObject();
