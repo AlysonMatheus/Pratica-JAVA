@@ -10,8 +10,8 @@ public class Smartphone {
     }
       //Reflexivo: x.equals(x) tem que ser  true para tudo que for diferente de null
     // Simetrico: para x e y difentes de null, se x.equals(y) == true logo y.equals(x) == true
-    // Trasnsivitadade: para x,y,z difentes de null, se x.equals(y) == true, e x.equals(z) == true logo , y.equals(z) == true
-    // Consistente: x;euqlas(x) sempre retorna true se x for diferente de null
+    // Transitividade: para x,y,z difentes de null, se x.equals(y) == true, e x.equals(z) == true logo , y.equals(z) == true
+    // Consistente: x.equals(x) sempre retorna true se x for diferente de null
     // para x diferente de null, x.equals(null) tem que retornar false
     @Override
     public boolean equals(Object obj) {
