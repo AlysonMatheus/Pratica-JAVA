@@ -9,14 +9,14 @@ public class Aluno implements Serializable {
     private static final long serialVersionUID = -1886247962795097576L;
     private Long id;
     private String nome;
-    private transient String passoword;
+    private transient String password;
     private transient Turma turma;
     private static String nomeEscola = "Alyson Viradao no Java";
 
-    public Aluno(Long id, String nome, String passoword) {
+    public Aluno(Long id, String nome, String password) {
         this.id = id;
         this.nome = nome;
-        this.passoword = passoword;
+        this.password = password;
         System.out.println("Dentro do Construtor");
     }
 
@@ -49,7 +49,7 @@ public class Aluno implements Serializable {
         return "Aluno{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
-                ", passoword='" + passoword + '\'' +
+                ", passoword='" + password + '\'' +
                 ", nomeEscola='" + nomeEscola + '\'' +
                 ", Turma='" + turma + '\'' +
                 '}';
@@ -80,10 +80,10 @@ public class Aluno implements Serializable {
     }
 
     public String getPassoword() {
-        return passoword;
+        return password;
     }
 
     public void setPassoword(String passoword) {
-        this.passoword = passoword;
+        this.password = passoword;
     }
 }
