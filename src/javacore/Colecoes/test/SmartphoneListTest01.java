@@ -15,10 +15,11 @@ public class SmartphoneListTest01 {
         smartphones.add(s1);
         smartphones.add(s2);
         smartphones.add(0, s3);
-        for (Smartphone smartphone : smartphones) {
 
+        for (Smartphone smartphone : smartphones) {
             System.out.println(smartphone);
         }
+
         Smartphone s4 = new Smartphone("Samsung", "22223333");
 
         System.out.println(smartphones.contains(s4));
