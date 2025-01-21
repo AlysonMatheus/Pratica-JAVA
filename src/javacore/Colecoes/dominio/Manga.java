@@ -2,7 +2,7 @@ package javacore.Colecoes.dominio;
 
 import java.util.Objects;
 
-public class Manga {
+public class Manga implements Comparable<Manga>{
     private Long id;
     private String nome;
     private double preco;
@@ -35,6 +35,7 @@ public class Manga {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(id, nome, preco);
     }
 
@@ -43,6 +44,7 @@ public class Manga {
     }
 
     public void setId(Long id) {
+
         this.id = id;
     }
 
@@ -63,4 +65,23 @@ public class Manga {
     }
 
 
-}
+    @Override
+    public int compareTo(Manga outroManga) {
+        ///negativo se o this < outroManga
+        // se this == outroManga, return 0
+        ///postivo see this > outroManga
+        /*if (this.id <outroManga.getId()){
+            return -1;
+        }else if (this.id.equals(outroManga.getId())){
+            return 0;
+
+        }else{
+            return 1;
+
+        }*/
+      return this.nome.compareTo(outroManga.getNome());
+    // return  Double.valueOf(preco).compareTo(outroManga.getPreco());
+      //  return this.id.compareTo(outroManga.getId());
+    }
+    }
+
