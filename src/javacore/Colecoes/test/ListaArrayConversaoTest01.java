@@ -31,6 +31,6 @@ public class ListaArrayConversaoTest01 {
     
          //Arrays.asList(1,2,3,4,5);
         List<String> list = Arrays.asList("1,2,3,4,5");
-        
+
     }
 }
