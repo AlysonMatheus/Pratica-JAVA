@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BinarySeracjTest01 {
+public class BinarySearchTest01 {
     public static void main(String[] args) {
         List<Integer> numeros = new ArrayList();
         numeros.add(2);

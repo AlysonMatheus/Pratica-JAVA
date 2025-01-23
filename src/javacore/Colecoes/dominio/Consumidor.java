@@ -9,7 +9,7 @@ public class Consumidor {
 
 
     public Consumidor(String nome) {
-        this.id = ThreadLocalRandom.current().nextLong();
+        this.id = ThreadLocalRandom.current().nextLong(0,100_000);
         this.nome = nome;
     }
 
@@ -32,5 +32,9 @@ public class Consumidor {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

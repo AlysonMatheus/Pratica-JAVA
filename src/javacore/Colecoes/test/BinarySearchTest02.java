@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class BinarySeracjTest02 {
+public class BinarySearchTest02 {
     public static void main(String[] args) {
         List<Manga> mangas = new ArrayList<>(6);
         MangaByIdComparator mangaByIdComparator = new MangaByIdComparator();
