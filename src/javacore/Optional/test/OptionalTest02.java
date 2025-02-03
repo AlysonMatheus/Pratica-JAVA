@@ -12,12 +12,13 @@ public class OptionalTest02 {
         mangaByTitle.ifPresent(m -> m.setTitle("Boku no hero 2"));
         System.out.println(mangaByTitle);
 
-        Manga mangaById = MangaRepository.finById(3)
+        Manga mangaById = MangaRepository.finById(2)
                 .orElseThrow(IllegalArgumentException::new);
         System.out.println(mangaById);
 
-        MangaRepository.finByTitle("Drifters")
-                .orElseGet()
+        Manga newManga = MangaRepository.finByTitle("Drifters")
+                .orElseGet(() -> new Manga(3, "Drifters", 20));
 
+        System.out.println(newManga);
     }
 }
