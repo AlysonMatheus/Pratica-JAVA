@@ -26,7 +26,7 @@ public class StreamTest03 {
                 .count();
 
         System.out.println(count);
-      
+
 
     }
 }
