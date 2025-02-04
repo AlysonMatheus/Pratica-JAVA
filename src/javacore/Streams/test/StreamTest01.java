@@ -23,7 +23,7 @@ import java.util.List;
          lightNovels.sort(Comparator.comparing(LightNovel::getTitle));
          List<String> titles = new ArrayList<>();
          for (LightNovel lightNovel : lightNovels) {
-             if (lightNovel.getPrice()<=3){
+             if (lightNovel.getPrice()<=4){
                  titles.add(lightNovel.getTitle());
              }
              if (titles.size()>=3){
