@@ -24,7 +24,7 @@ public class StreamTest08 {
                 .reduce(Double::sum)
                 .ifPresent(System.out::println);
 
-        double sum = lightNovels.stream()
+        lightNovels.stream()
                 .mapToDouble(LightNovel::getPrice)
                 .filter(price -> price > 3)
                 .sum();
