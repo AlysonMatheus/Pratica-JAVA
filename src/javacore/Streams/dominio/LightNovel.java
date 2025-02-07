@@ -5,20 +5,30 @@ import java.util.Objects;
 public class LightNovel {
     private String title;
     private double price;
+    private Category caretory;
 
     public LightNovel(String title, double price) {
         this.title = title;
         this.price = price;
     }
 
+    public LightNovel(String title,double price, Category caretory) {
+        this.title = title;
+        this.caretory = caretory;
+        this.price = price;
+    }
 
     @Override
     public String toString() {
         return "LightNovel{" +
                 "title='" + title + '\'' +
                 ", price=" + price +
+                ", caretory=" + caretory +
                 '}';
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {
@@ -39,5 +49,9 @@ public class LightNovel {
 
     public double getPrice() {
         return price;
+    }
+
+    public Category getCaretory() {
+        return caretory;
     }
 }
