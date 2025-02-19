@@ -10,7 +10,7 @@ public class Membros {
     public boolean isOpen() {
         return open;
     }
-    public int pedingEmailsd(){
+    public int pedingEmails(){
     synchronized (emails){
         return emails.size();
     }
@@ -30,7 +30,7 @@ public class Membros {
         System.out.println(Thread.currentThread().getName() + " checking if there are emails");
         synchronized (this.emails) {
             while (this.emails.size()==0){
-                if(!open) break;
+                if(!open) return null;
                 System.out.println(Thread.currentThread().getName()+" Não tem email disponivel na lista, entrando em modo de espera");
       this.emails.wait();
             }
