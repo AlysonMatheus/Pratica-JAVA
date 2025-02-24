@@ -3,7 +3,7 @@ package javacore.Concorrencia.test;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-class Worker implements Runnable{
+class Worker implements Runnable {
     private String name;
     private ReentrantLock lock;
 
@@ -14,10 +14,10 @@ class Worker implements Runnable{
 
     @Override
     public void run() {
-        lock.lock();
+        lock.tryLock();
         try {
 
-                System.out.printf("Thread %s entrou em uma sessão critica%n",name);
+            System.out.printf("Thread %s entrou em uma sessão critica%n", name);
 
 
             System.out.printf("%d Threads esperando na fila%n", lock.getQueueLength());
@@ -29,10 +29,12 @@ class Worker implements Runnable{
         } finally {
 
             lock.unlock();
-        }
 
+        }
     }
+
 }
+
 
 public class ReentrantLockTest01 {
     public static void main(String[] args) {

@@ -42,6 +42,7 @@ public class Membros {
         synchronized (emails) {
 
             System.out.println(Thread.currentThread().getName() + "Notificando todo mundo que não estamos mais pegando email ");
+             this.emails.notifyAll();
         }
     }
 }
