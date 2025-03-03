@@ -15,14 +15,14 @@ public class Membros {
         return open;
     }
 
-    public int pedingEmails(){
+    public int pedingEmails() {
         lock.lock();
- try {
-     return emails.size();
-    }finally {
-     lock.unlock();
+        try {
+            return emails.size();
+        } finally {
+            lock.unlock();
 
- }
+        }
     }
 
     public void addMemberEmail(String email) {
@@ -39,21 +39,20 @@ public class Membros {
         }
     }
 
-        public String retrieveEmail () throws InterruptedException {
-            System.out.println(Thread.currentThread().getName() + " checking if there are emails");
-            lock.lock();
-            try {
-                while (this.emails.size() == 0) {
-                    if (!open) return null;
-                    System.out.println(Thread.currentThread().getName() + " Não tem email disponivel na lista, entrando em modo de espera ");
-                 condition.await();
-                }
-                return this.emails.poll();
+    public String retrieveEmail() throws InterruptedException {
+        System.out.println(Thread.currentThread().getName() + " checking if there are emails");
+        lock.lock();
+        try {
+            while (this.emails.size() == 0) {
+                if (!open) return null;
+                System.out.println(Thread.currentThread().getName() + " Não tem email disponivel na lista, entrando em modo de espera ");
+                condition.await();
             }
-            finally {
-                lock.unlock();
-            }
+            return this.emails.poll();
+        } finally {
+            lock.unlock();
         }
+    }
 
     public void close() {
         open = false;
@@ -61,7 +60,7 @@ public class Membros {
         try {
 
             System.out.println(Thread.currentThread().getName() + "Notificando todo mundo que não estamos mais pegando email ");
-        }finally {
+        } finally {
             lock.unlock();
         }
     }
