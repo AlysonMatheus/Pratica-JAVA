@@ -3,6 +3,7 @@ package javacore.Concorrencia.service;
 import javacore.Concorrencia.dominio.Discount;
 import javacore.Concorrencia.dominio.Quote;
 
+import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
@@ -16,7 +17,7 @@ public class StoreServiceWithDiscont {
         Discount.Code discountCode = Discount.Code.values()[
                 ThreadLocalRandom.current().nextInt(Discount.Code.values().length)
                 ];
-        return String.format("%s:%.2f:%s",Storename,price, discountCode);
+        return String.format(Locale.US,"%s:%.2f:%s",Storename,price, discountCode);
     }
 
 
