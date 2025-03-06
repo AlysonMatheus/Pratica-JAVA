@@ -40,7 +40,8 @@ public String applyDiscount (Quote quote){
 
     private void delay() {
         try {
-            TimeUnit.SECONDS.sleep(1);
+            int milli = ThreadLocalRandom.current().nextInt(200,500);
+            TimeUnit.SECONDS.sleep(milli);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
