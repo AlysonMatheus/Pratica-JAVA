@@ -60,5 +60,9 @@ public class Person {
             return person;
         }
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
 }
 
