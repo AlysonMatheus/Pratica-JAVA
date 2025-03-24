@@ -3,7 +3,9 @@ package javacore.JBDC.test;
 import javacore.JBDC.conn.ConnectionFactory;
 import javacore.JBDC.dominio.Producer;
 import javacore.JBDC.repository.ProducerRepository;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
 
@@ -11,5 +13,11 @@ public class ConnectionFactoryTest01 {
 
         ProducerRepository.save(producer);
 
+  /*  log.info("info");
+    log.debug("debug");
+    log.warn("warn");
+    log.error("error");
+    log.trace("trace");
+*/
     }
 }
