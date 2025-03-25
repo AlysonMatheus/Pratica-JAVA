@@ -11,10 +11,13 @@ public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
 
         Producer producer = Producer.builder().name("Studio Deen").build();
+        Producer producerToUpdate = Producer.builder().id(1).name("NHK").build();
 
-       // ProducerRepository.save(producer);
+   // ProducerRepository.save(producer);
 
-       // ProducerService.delete(5);
+        //ProducerService.delete(15);
+        ProducerService.update(producerToUpdate);
+
 
   /*  log.info("info");
     log.debug("debug");
