@@ -6,6 +6,8 @@ import javacore.JBDC.repository.ProducerRepository;
 import javacore.JBDC.service.ProducerService;
 import lombok.extern.log4j.Log4j2;
 
+import java.util.List;
+
 @Log4j2
 public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
@@ -13,10 +15,13 @@ public class ConnectionFactoryTest01 {
         Producer producer = Producer.builder().name("Studio Deen").build();
         Producer producerToUpdate = Producer.builder().id(1).name("NHK").build();
 
-   // ProducerRepository.save(producer);
+        // ProducerRepository.save(producer);
 
         //ProducerService.delete(15);
-        ProducerService.update(producerToUpdate);
+
+        //  ProducerService.update(producerToUpdate);
+        List<Producer> producers = ProducerService.findAll();
+        log.info("´Producers found '{}'", producers);
 
 
   /*  log.info("info");
