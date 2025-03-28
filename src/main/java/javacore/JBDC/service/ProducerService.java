@@ -24,8 +24,11 @@ public class ProducerService {
         return ProducerRepository.findAll();
 
     }
-    public static void showProducerMetadata(){
-        ProducerRepository.showProducerMetadata();
+    public static void showProducerMetaData(){
+        ProducerRepository.showProducerMetaData();
+    }
+    public static void showDriverMetaData(){
+        ProducerRepository.showDriverMetadata();
     }
 
     public static List<Producer> findByName(String name) {
