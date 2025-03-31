@@ -155,5 +155,19 @@ public class ProducerRepository {
         }
 
     }
+    public static void showTypeScrollWorking() {
+
+        String sql = "SELECT * FROM anime_store.producer";
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+             ResultSet rs = stmt.executeQuery(sql)) {
+          log.info("Last row?'{}'",rs.last());
+          log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+        } catch (SQLException e) {
+            log.error("Error while trying to find producers ", e);
+
+        }
+
+    }
 
 }

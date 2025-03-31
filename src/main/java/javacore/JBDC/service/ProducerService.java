@@ -30,6 +30,10 @@ public class ProducerService {
     public static void showDriverMetaData(){
         ProducerRepository.showDriverMetadata();
     }
+    public static void showTypeScrollWorking(){
+        ProducerRepository.showTypeScrollWorking();
+    }
+
 
     public static List<Producer> findByName(String name) {
         return ProducerRepository.findByName(name);
