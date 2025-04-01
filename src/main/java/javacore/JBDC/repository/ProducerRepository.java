@@ -4,6 +4,7 @@ import javacore.JBDC.conn.ConnectionFactory;
 import javacore.JBDC.dominio.Producer;
 import lombok.extern.log4j.Log4j2;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -130,21 +131,21 @@ public class ProducerRepository {
 
         try (Connection conn = ConnectionFactory.getConnection()) {
             DatabaseMetaData dbmetaData = conn.getMetaData();
-            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)){
-                   log.info("Supports TYPE_FORWARD_ONLY");
-            if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY,ResultSet.CONCUR_UPDATABLE)){
-                log.info("And Supports CONCUR_UPDATABLE");
-              }
-            }
-            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)){
-                log.info("Supports TYPE_SCROLL_INSENSITIVE");
-                if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_FORWARD_ONLY)) {
+                log.info("Supports TYPE_FORWARD_ONLY");
+                if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
                     log.info("And Supports CONCUR_UPDATABLE");
                 }
             }
-            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)){
+            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_INSENSITIVE)) {
+                log.info("Supports TYPE_SCROLL_INSENSITIVE");
+                if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
+                    log.info("And Supports CONCUR_UPDATABLE");
+                }
+            }
+            if (dbmetaData.supportsResultSetType(ResultSet.TYPE_SCROLL_SENSITIVE)) {
                 log.info("Supports TYPE_SCROLL_SENSITIVE");
-                if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE)){
+                if (dbmetaData.supportsResultSetConcurrency(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE)) {
                     log.info("And Supports CONCUR_UPDATABLE");
                 }
             }
@@ -155,19 +156,27 @@ public class ProducerRepository {
         }
 
     }
+
     public static void showTypeScrollWorking() {
 
-        String sql = "SELECT * FROM anime_store.producer";
+        String sql = "SELECT * FROM anime_store.producer order by name desc";
         try (Connection conn = ConnectionFactory.getConnection();
              Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
              ResultSet rs = stmt.executeQuery(sql)) {
-          log.info("Last row?'{}'",rs.last());
-          log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+            log.info("Last row?'{}'", rs.last());
+            log.info("Row number'{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
+
+            log.info("First number'{}'", rs.first());
+            log.info("Row number'{}'", rs.getRow());
+            log.info(Producer.builder().id(rs.getInt("id")).name(rs.getString("name")).build());
         } catch (SQLException e) {
             log.error("Error while trying to find producers ", e);
 
         }
 
     }
+
+
 
 }
