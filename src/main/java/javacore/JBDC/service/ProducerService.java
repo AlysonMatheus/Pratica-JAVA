@@ -19,6 +19,10 @@ public class ProducerService {
         requireValidId(producer.getId());
         ProducerRepository.uptade(producer);
     }
+    public static void uptadePreparedStatement(Producer producer) {
+        requireValidId(producer.getId());
+        ProducerRepository.uptadePreparedStatement(producer);
+    }
 
     public static List<Producer> findAll() {
         return ProducerRepository.findAll();

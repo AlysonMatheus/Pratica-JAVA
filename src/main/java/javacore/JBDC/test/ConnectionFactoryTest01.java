@@ -13,7 +13,7 @@ public class ConnectionFactoryTest01 {
     public static void main(String[] args) {
 
         Producer producer = Producer.builder().name("Studio Deen").build();
-        Producer producerToUpdate = Producer.builder().id(1).name("NHK").build();
+        Producer producerToUpdate = Producer.builder().id(1).name("nhk").build();
 
         // ProducerRepository.save(producer);
 
@@ -28,8 +28,9 @@ public class ConnectionFactoryTest01 {
 //        ProducerService.showTypeScrollWorking();
 //        List<Producer> producers = ProducerService.findByNameAndInsertWhenNotFound("A-1 pictures");
 //        log.info("´Producers found '{}'", producers);
-        List<Producer> producers = ProducerService.findByNamePreparedStatement("Bones");
-        log.info("´Producers found '{}'", producers);
+//        List<Producer> producers = ProducerService.findByNamePreparedStatement("Bones");
+//        log.info("´Producers found '{}'", producers);
+        ProducerService.uptadePreparedStatement(producerToUpdate);
 
 
 
