@@ -42,7 +42,12 @@ public class ProducerService {
     public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
         return ProducerRepository.findByNameAndUpdateToUpperCase(name);
     }
-
+    public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
+        return ProducerRepository.findByNameAndInsertWhenNotFound(name);
+    }
+    public static void findByNameAndDelete(String name) {
+     ProducerRepository.findByNameAndDelete(name);
+    }
 
 
     private static void requireValidId(Integer id) {
