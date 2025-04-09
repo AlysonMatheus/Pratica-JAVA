@@ -19,6 +19,7 @@ public class ProducerService {
         requireValidId(producer.getId());
         ProducerRepository.uptade(producer);
     }
+
     public static void uptadePreparedStatement(Producer producer) {
         requireValidId(producer.getId());
         ProducerRepository.uptadePreparedStatement(producer);
@@ -28,13 +29,16 @@ public class ProducerService {
         return ProducerRepository.findAll();
 
     }
-    public static void showProducerMetaData(){
+
+    public static void showProducerMetaData() {
         ProducerRepository.showProducerMetaData();
     }
-    public static void showDriverMetaData(){
+
+    public static void showDriverMetaData() {
         ProducerRepository.showDriverMetadata();
     }
-    public static void showTypeScrollWorking(){
+
+    public static void showTypeScrollWorking() {
         ProducerRepository.showTypeScrollWorking();
     }
 
@@ -42,18 +46,25 @@ public class ProducerService {
     public static List<Producer> findByName(String name) {
         return ProducerRepository.findByName(name);
     }
-   public static List<Producer> findByNamePreparedStatement(String name) {
+
+    public static List<Producer> findByNamePreparedStatement(String name) {
         return ProducerRepository.findByNamePreparedStatement(name);
+    }
+
+    public static List<Producer> findByNameCallableStatement(String name) {
+        return ProducerRepository.findByNameCallableStatement(name);
     }
 
     public static List<Producer> findByNameAndUpdateToUpperCase(String name) {
         return ProducerRepository.findByNameAndUpdateToUpperCase(name);
     }
+
     public static List<Producer> findByNameAndInsertWhenNotFound(String name) {
         return ProducerRepository.findByNameAndInsertWhenNotFound(name);
     }
+
     public static void findByNameAndDelete(String name) {
-     ProducerRepository.findByNameAndDelete(name);
+        ProducerRepository.findByNameAndDelete(name);
     }
 
 
