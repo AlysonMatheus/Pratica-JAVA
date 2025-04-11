@@ -34,4 +34,11 @@ public  static  Connection getConnection() throws SQLException {
         return jdbcRowSet;
 
     }
+    public  static CachedRowSet getCacheRowSet() throws SQLException {
+
+
+
+        return RowSetProvider.newFactory().createCachedRowSet();
+
+    }
 }
