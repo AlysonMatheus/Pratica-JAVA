@@ -1,38 +1,35 @@
 package javacore.Crud.service;
 
+import javacore.Crud.conn.ConnectionFactory;
 import javacore.Crud.dominio.Producer;
 import javacore.Crud.repository.ProducerRepository;
+import lombok.extern.log4j.Log4j2;
 
-import java.util.List;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.Scanner;
 
+@Log4j2
 public class ProducerService {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void menu(int op) {
         switch (op) {
-            case 1:
-                findByname();
-                break;
-            case 2:
-                delete();
-                break;
-            default:
-                throw new IllegalArgumentException("Not a valid option");
-
+            case 1 -> findByname();
+            case 2 -> delete();
+            case 3 -> save();
+            default -> throw new IllegalArgumentException("Not a valid option");
         }
     }
 
     private static void findByname() {
         System.out.println("Type the name or empty to all");
         String name = SCANNER.nextLine();
-        List<Producer> producers = ProducerRepository.findByName(name);
-        for (int i = 0; i < producers.size(); i++) {
-            Producer producer = producers.get(i);
+        ProducerRepository.findByName(name)
+                .forEach(p -> System.out.printf("[%d] -%s%n", p.getId(), p.getName()));
 
-            System.out.printf("[%d] - %d | %s%n", i, producer.getId(), producer.getName());
-
-        }
 
     }
 
@@ -48,5 +45,17 @@ public class ProducerService {
         }
     }
 
+    private static void save() {
+        System.out.println("Type the name of the producer");
+        String name = SCANNER.nextLine();
+        Producer producer = Producer.builder().name(name).build();
+        ProducerRepository.save(producer);
+
+    }
 }
+
+
+
+
+
 
