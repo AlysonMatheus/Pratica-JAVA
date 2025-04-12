@@ -1,7 +1,6 @@
 package javacore.Crud.repository;
 
 
-
 import javacore.Crud.conn.ConnectionFactory;
 import javacore.Crud.dominio.Producer;
 import lombok.extern.log4j.Log4j2;
@@ -16,7 +15,7 @@ import java.util.List;
 @Log4j2
 public class ProducerRepository {
     public static List<Producer> findByName(String name) {
-        log.info("Finding Producer by name '{}'",name);
+        log.info("Finding Producer by name '{}'", name);
         List<Producer> producers = new ArrayList<>();
 
         try (Connection conn = ConnectionFactory.getConnection();
@@ -46,6 +45,25 @@ public class ProducerRepository {
 
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setString(1, String.format("%%%s%%", name));
+        return ps;
+    }
+
+    public static void delete(int id) {
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement ps = createPrepareStatementDelete(conn, id)) {
+            ps.execute();
+            log.info("Deleted producer '{}' from the Database", id);
+
+        } catch (SQLException e) {
+            log.error("Error while trying to delete producer '{}' ", id, e);
+
+        }
+    }
+
+    private static PreparedStatement createPrepareStatementDelete(Connection conn, Integer id) throws SQLException {
+        String sql = "DELETE FROM `anime_store`.`producer` WHERE (`id` = ?);";
+        PreparedStatement ps = conn.prepareStatement(sql);
+        ps.setInt(1, id);
         return ps;
     }
 }
