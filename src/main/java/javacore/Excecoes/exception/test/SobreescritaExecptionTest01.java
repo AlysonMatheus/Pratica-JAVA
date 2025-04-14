@@ -1,10 +1,8 @@
-package javacore.Exececoes.exception.test;
+package javacore.Excecoes.exception.test;
 
-import javacore.Exececoes.exception.dominio.Funcionario;
-import javacore.Exececoes.exception.dominio.LoginInvalidoException;
-import javacore.Exececoes.exception.dominio.Pessoa;
-
-import java.io.FileNotFoundException;
+import javacore.Excecoes.exception.dominio.Funcionario;
+import javacore.Excecoes.exception.dominio.LoginInvalidoException;
+import javacore.Excecoes.exception.dominio.Pessoa;
 
 public class SobreescritaExecptionTest01 {
     public static void main(String[] args) {

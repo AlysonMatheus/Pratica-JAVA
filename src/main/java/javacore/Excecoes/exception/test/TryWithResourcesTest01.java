@@ -1,7 +1,7 @@
-package javacore.Exececoes.exception.test;
+package javacore.Excecoes.exception.test;
 
-import javacore.Exececoes.exception.dominio.Leitor1;
-import javacore.Exececoes.exception.dominio.Leitor2;
+import javacore.Excecoes.exception.dominio.Leitor1;
+import javacore.Excecoes.exception.dominio.Leitor2;
 
 import java.io.*;
 

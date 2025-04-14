@@ -1,6 +1,6 @@
-package javacore.Exececoes.exception.test;
+package javacore.Excecoes.exception.test;
 
-import javacore.Exececoes.exception.dominio.LoginInvalidoException;
+import javacore.Excecoes.exception.dominio.LoginInvalidoException;
 
 import java.util.Scanner;
 

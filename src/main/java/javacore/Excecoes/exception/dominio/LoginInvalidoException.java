@@ -1,4 +1,4 @@
-package javacore.Exececoes.exception.dominio;
+package javacore.Excecoes.exception.dominio;
 
 public class LoginInvalidoException extends Exception {
 

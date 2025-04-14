@@ -1,4 +1,4 @@
-package javacore.Exececoes.exception.dominio;
+package javacore.Excecoes.exception.dominio;
 
 import java.io.FileNotFoundException;
 

@@ -1,7 +1,4 @@
-package javacore.Exececoes.exception.dominio;
-
-import java.io.FileNotFoundException;
-import java.io.IOException;
+package javacore.Excecoes.exception.dominio;
 
 public class Funcionario extends Pessoa {
     public void salvar() throws LoginInvalidoException,ArithmeticException {

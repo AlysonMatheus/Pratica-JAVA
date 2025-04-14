@@ -1,6 +1,5 @@
 package javacore.PadroesDeProjetos.Test;
 
-import javacore.Exececoes.exception.dominio.Pessoa;
 import javacore.PadroesDeProjetos.dominio.Person;
 
 public class BuildPatternTest01 {

@@ -1,4 +1,4 @@
-package javacore.Exececoes.error.test;
+package javacore.Excecoes.error.test;
 
 public class StackOverFlowTest01 {
     public static void main(String[] args) {

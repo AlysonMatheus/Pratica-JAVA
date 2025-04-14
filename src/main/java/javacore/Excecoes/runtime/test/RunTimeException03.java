@@ -1,4 +1,4 @@
-package javacore.Exececoes.runtime.test;
+package javacore.Excecoes.runtime.test;
 
 public class RunTimeException03 {
     public static void main(String[] args) {

@@ -1,6 +1,4 @@
-package javacore.Exececoes.runtime.test;
-
-import java.io.IOException;
+package javacore.Excecoes.runtime.test;
 
 public class RunTimeExceptionTest02 {
     public static void main(String[] args) {

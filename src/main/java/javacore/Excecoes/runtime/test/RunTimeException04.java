@@ -1,4 +1,4 @@
-package javacore.Exececoes.runtime.test;
+package javacore.Excecoes.runtime.test;
 
 import java.io.FileNotFoundException;
 import java.sql.SQLException;
