@@ -15,5 +15,6 @@ public class HerencaTest02 {
     // 9 - Construtor é executado da subclasse
     public static void main(String[] args) {
         Funcionario funcionario = new Funcionario("Martins");
+        System.out.println(funcionario.getNome());
     }
 }
