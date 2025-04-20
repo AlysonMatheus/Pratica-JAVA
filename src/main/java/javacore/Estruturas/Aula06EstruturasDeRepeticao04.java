@@ -1,4 +1,4 @@
-package alyson.dev;
+package javacore.Estruturas;
 
 public class Aula06EstruturasDeRepeticao04 {
     // Dado o valor de um carro, descubra quantas ele pode ser parcelado

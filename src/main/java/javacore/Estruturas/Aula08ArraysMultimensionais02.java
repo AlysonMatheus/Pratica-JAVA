@@ -1,4 +1,4 @@
-package alyson.dev;
+package javacore.Estruturas;
 
 public class Aula08ArraysMultimensionais02 {
     public static void main(String[] args) {

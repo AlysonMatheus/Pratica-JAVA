@@ -1,4 +1,4 @@
-package alyson.dev;
+package javacore.Estruturas;
 
 public class aula02TiposPrimitivos {
     public static void main(String[] args) {
